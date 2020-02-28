@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener {
 	public function onMove(PlayerMoveEvent $event){
 	    $player = $event->getPlayer();
 	    if(!$event->isCancelled()){
-            $player->sendPosition($player, $player->yaw, $player->pitch, MovePlayerPacket::MODE_NORMAL, $player->getViewers());
-        }
-    }
+            $player->broadcastMovement();
+	    }
+	}
 }
